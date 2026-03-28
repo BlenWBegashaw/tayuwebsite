@@ -8,23 +8,14 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-gray-950 text-white">
+<body class="bg-gradient-to-b from-gray-900 via-gray-800 to-black text-white">
 
-<!-- ===================== NAVBAR ===================== -->
+<!-- ================= NAVBAR ================= -->
 <nav class="sticky top-0 z-50 backdrop-blur bg-gray-900/70 flex items-center justify-between px-4 md:px-8 py-4 border-b border-gray-700">
 
-  <!-- LOGO -->
-  <img src="images/logo.png"
-       class="w-12 md:w-14 bg-transparent mix-blend-screen"
-       alt="BLU Logo"/>
+  <img src="images/logo.png" class="w-10 md:w-14 mix-blend-screen" />
 
-  <!-- MOBILE ICON (optional future menu) -->
-  <button class="md:hidden text-white text-2xl">
-    ☰
-  </button>
-
-  <!-- DESKTOP LINKS -->
-  <ul class="hidden md:flex space-x-10 text-lg font-medium">
+  <ul class="hidden md:flex space-x-10 text-base md:text-lg font-medium">
     <li><a href="index.html" class="hover:text-yellow-400">Home</a></li>
     <li><a href="equipment.html" class="hover:text-yellow-400">Equipment</a></li>
     <li><a href="contact.html" class="text-yellow-400">Contact</a></li>
@@ -32,89 +23,69 @@
 
 </nav>
 
-<!-- ===================== HEADER ===================== -->
+<!-- ================= HEADER ================= -->
 <section class="text-center py-10 px-4">
-  <h1 class="text-2xl md:text-4xl font-bold">Contact BLU</h1>
-  <p class="text-gray-400 mt-2 text-sm md:text-base">
-    We reply as fast as possible. Send us a message below.
+  <h1 class="text-3xl md:text-4xl font-bold text-yellow-400">
+    Send a Message
+  </h1>
+
+  <p class="text-gray-300 mt-2 text-sm md:text-base">
+    We reply quickly to all requests.
   </p>
 </section>
 
-<!-- ===================== CONTENT ===================== -->
-<section class="max-w-6xl mx-auto px-4 md:px-8 pb-16">
+<!-- ================= FORM ================= -->
+<section class="max-w-4xl mx-auto px-4 pb-16">
 
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+  <form action="https://formspree.io/f/xojpjgrg"
+        method="POST"
+        class="bg-gray-800 p-5 md:p-8 rounded-xl space-y-4 border border-gray-700 shadow-lg">
 
-    <!-- LEFT INFO -->
-    <div class="space-y-8">
+    <input type="text"
+           name="name"
+           placeholder="Your Name"
+           class="w-full p-3 rounded bg-gray-900 border border-gray-700 text-white">
 
-      <div>
-        <h2 class="text-lg font-semibold">Phone</h2>
-        <p class="text-gray-400">+251 900 000 000</p>
-      </div>
+    <input type="email"
+           name="email"
+           placeholder="Your Email"
+           class="w-full p-3 rounded bg-gray-900 border border-gray-700 text-white">
 
-      <div>
-        <h2 class="text-lg font-semibold">Email</h2>
-        <p class="text-gray-400">info@blu.com</p>
-      </div>
+    <textarea name="message"
+              id="messageBox"
+              rows="6"
+              placeholder="Your Message"
+              class="w-full p-3 rounded bg-gray-900 border border-gray-700 text-white"></textarea>
 
-      <div>
-        <h2 class="text-lg font-semibold">Location</h2>
-        <p class="text-gray-400">Addis Ababa, Ethiopia</p>
-      </div>
+    <button class="w-full bg-yellow-500 text-black py-3 rounded font-semibold hover:bg-yellow-400 transition">
+      Send Message
+    </button>
 
-      <div class="text-gray-500 text-sm">
-        Working hours: Mon - Sat, 8:00 AM - 6:00 PM
-      </div>
-
-    </div>
-
-    <!-- RIGHT FORM (FORMSPREE) -->
-    <form action="https://formspree.io/f/xojpjgrg"
-          method="POST"
-          class="space-y-4 bg-gray-900 p-6 rounded-lg border border-gray-800">
-
-      <input type="text"
-             name="name"
-             placeholder="Your Name"
-             required
-             class="w-full p-3 rounded bg-gray-800 border border-gray-700 focus:outline-none focus:border-yellow-400 text-white"/>
-
-      <input type="email"
-             name="email"
-             placeholder="Your Email"
-             required
-             class="w-full p-3 rounded bg-gray-800 border border-gray-700 focus:outline-none focus:border-yellow-400 text-white"/>
-
-      <input type="text"
-             name="subject"
-             placeholder="Subject"
-             class="w-full p-3 rounded bg-gray-800 border border-gray-700 focus:outline-none focus:border-yellow-400 text-white"/>
-
-      <textarea rows="5"
-                name="message"
-                placeholder="Your Message"
-                required
-                class="w-full p-3 rounded bg-gray-800 border border-gray-700 focus:outline-none focus:border-yellow-400 text-white"></textarea>
-
-      <!-- Formspree extras -->
-      <input type="hidden" name="_subject" value="New Contact Message from BLU Website">
-
-      <button type="submit"
-              class="w-full bg-yellow-400 text-black py-3 rounded font-semibold hover:bg-yellow-300 transition">
-        Send Message
-      </button>
-
-    </form>
-
-  </div>
+  </form>
 
 </section>
 
-<!-- ===================== FOOTER ===================== -->
-<footer class="text-center text-gray-500 text-sm py-6 border-t border-gray-800">
-  © 2026 BLU. All rights reserved.
-</footer>
+<!-- ================= AUTO FILL SCRIPT ================= -->
+<script>
+window.onload = function () {
+  const params = new URLSearchParams(window.location.search);
+  let message = params.get("message");
+
+  if (message) {
+    message = decodeURIComponent(message);
+
+    const formatted =
+`📩 Equipment Quote Request
+
+${message}
+
+---
+Sent from BLU Equipment Page`;
+
+    document.getElementById("messageBox").value = formatted;
+  }
+};
+</script>
 
 </body>
 </html>
