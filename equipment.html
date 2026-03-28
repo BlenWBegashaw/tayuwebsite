@@ -40,13 +40,13 @@
   </h1>
 
   <p class="text-gray-300 mt-3 max-w-2xl mx-auto">
-    Hyundai HX340SL (2025) — 34T mining excavator available in 3 units for large or small projects.
+    Hyundai HX340SL (2025) — 34T mining excavator available in 3 units.
   </p>
 
 </section>
 
 
-<!-- ===================== SINGLE SMART CARD ===================== -->
+<!-- ===================== CARD ===================== -->
 <section class="mt-12 px-8 max-w-4xl mx-auto">
 
   <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg grid md:grid-cols-2">
@@ -62,10 +62,9 @@
       </h2>
 
       <p class="text-gray-300 mt-2">
-        Heavy-duty 34-ton mining excavator for quarry, rock excavation, and loading operations.
+        Heavy-duty mining excavator for quarry, rock excavation, and construction.
       </p>
 
-      <!-- SPECS -->
       <div class="mt-4 space-y-2 text-sm text-gray-300">
         <p>⚙️ Power: ~260 HP</p>
         <p>🪨 Bucket: 1.6 – 1.8 m³</p>
@@ -73,11 +72,9 @@
         <p>🏗️ Use: Mining • Quarry • Rock excavation</p>
       </div>
 
-
-      <!-- ===================== MACHINE SELECT ===================== -->
+      <!-- SELECT MACHINE -->
       <div class="mt-6">
-
-        <label class="text-sm text-gray-300">Select Amounts:</label>
+        <label class="text-sm text-gray-300">Select Machine:</label>
 
         <select id="machineSelect"
                 class="w-full mt-2 p-3 rounded bg-gray-900 border border-gray-700 text-white">
@@ -88,12 +85,10 @@
           <option value="HX340SL - ALL 3 UNITS">All 3 Units</option>
 
         </select>
-
       </div>
 
-
       <!-- BUTTON -->
-      <button onclick="sendToContact()"
+      <button onclick="bookMachine()"
               class="mt-6 w-full bg-yellow-500 text-black px-6 py-3 rounded-full font-medium hover:bg-yellow-400 transition">
 
         Book This Machine
@@ -106,36 +101,23 @@
 </section>
 
 
-<!-- ===================== INFO ===================== -->
-<section class="mt-20 text-center px-6 max-w-2xl mx-auto">
-
-  <h2 class="text-2xl font-semibold text-yellow-400">
-    Flexible Rental Options
-  </h2>
-
-  <p class="text-gray-300 mt-3">
-    You can rent 1 machine or all 3 depending on your project size.
-    We deliver directly to your site anywhere in Ethiopia.
-  </p>
-
-</section>
-
-
 <!-- FOOTER -->
 <footer class="mt-24 py-10 text-center text-gray-500 border-t border-gray-800">
   © 2026 BLU Heavy Equipment Rental
 </footer>
 
 
-<!-- ===================== SCRIPT ===================== -->
+<!-- SCRIPT -->
 <script>
-function sendToContact() {
+function bookMachine() {
   const selected = document.getElementById("machineSelect").value;
 
-  // store selection in URL so contact page can read it later
-  const url = "contact.html?machine=" + encodeURIComponent(selected);
+  const message =
+    "Hello BLU,\n\nI am interested in renting: " + selected +
+    ". Please provide availability and pricing.\n\nThank you.";
 
-  window.location.href = url;
+  window.location.href =
+    "contact.html?message=" + encodeURIComponent(message);
 }
 </script>
 
