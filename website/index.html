@@ -2,79 +2,138 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TAYU BUSINESS PLC</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-[#1f2937] text-white"> <!-- dark gray base -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BLU | Heavy Equipment Rental</title>
 
-<!-- NAVBAR -->
-<nav class="flex items-center justify-between px-8 py-5">
-  <img src="images/logo.JPG" class="w-36" alt="TAYU logo" />
-  <ul class="flex gap-8 font-medium">
-    <li><a href="index.html" class="hover:text-yellow-400">Home</a></li>
-    <li><a href="equipment.html" class="hover:text-yellow-400">Equipment</a></li>
-    <li><a href="contact.html" class="hover:text-yellow-400">Contact</a></li>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Smooth scroll -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+
+<body class="bg-gradient-to-b from-gray-900 via-gray-800 to-black text-white">
+
+<!-- ===================== NAVBAR ===================== -->
+<nav class="sticky top-0 z-50 backdrop-blur bg-gray-900/70 flex items-center justify-between px-8 py-4 border-b border-gray-700">
+
+  <!-- LOGO -->
+  <img src="images/logo.JPG" class="w-32 md:w-40" alt="BLU Logo"/>
+
+  <!-- LINKS -->
+  <ul class="hidden md:flex flex-1 justify-center space-x-8 text-sm">
+    <li><a href="#" class="hover:text-yellow-400">Home</a></li>
+    <li><a href="#featured" class="hover:text-yellow-400">Equipment</a></li>
+    <li><a href="#contact" class="hover:text-yellow-400">Contact</a></li>
   </ul>
+
+  <!-- CTA -->
+  <a href="#contact" class="bg-yellow-500 text-black px-4 py-2 rounded-full font-medium hover:bg-yellow-400 transition">
+    Get Quote
+  </a>
 </nav>
 
-<!-- HERO (closer to your original design) -->
-<section class="flex flex-col xl:flex-row items-center px-8 mt-16">
 
-  <!-- TEXT SIDE -->
+<!-- ===================== HERO SECTION ===================== -->
+<section class="px-8 mt-16 flex flex-col xl:flex-row items-center gap-10">
+
+  <!-- TEXT -->
   <div class="xl:w-1/2">
     <h1 class="text-5xl xl:text-6xl font-semibold leading-tight">
-      Reliable Equipment <br />
-      <span class="font-light text-gray-300">Delivered Fast</span>
+      Heavy Equipment <br/>
+      <span class="text-yellow-400 font-light">Rental in Ethiopia</span>
     </h1>
 
-    <p class="mt-6 text-gray-300 max-w-md">
-      Rent excavators, bulldozers, and trucks for construction projects across Ethiopia.
+    <p class="mt-5 text-gray-300">
+      BLU provides reliable excavators, loaders, and construction machinery for rent.
+      Fast delivery. Trusted service. Built for construction projects that move fast.
     </p>
 
     <!-- BUTTONS -->
-    <div class="mt-10">
-      <a href="equipment.html"
-        class="bg-yellow-400 text-black rounded-full py-3 px-8 font-medium inline-block mr-4 hover:bg-transparent hover:text-yellow-400 hover:border-yellow-400 border border-transparent duration-300">
-        Rent Now
+    <div class="mt-8 flex flex-wrap gap-4">
+
+      <a href="https://wa.me/251000000000"
+         class="bg-yellow-500 text-black px-6 py-3 rounded-full font-medium hover:bg-yellow-400 transition">
+        Rent via WhatsApp
       </a>
 
-      <a href="equipment.html" class="text-white">
+      <a href="#featured" class="border border-gray-500 px-6 py-3 rounded-full hover:border-yellow-400 hover:text-yellow-400">
         View Equipment
-        <span class="inline-block rotate-90 ml-1">➜</span>
       </a>
+
     </div>
   </div>
 
-  <!-- IMAGE SIDE -->
-  <div class="xl:w-1/2 mt-12 xl:mt-0">
-    <img src="images/pic3.JPG" class="w-full max-w-lg mx-auto" />
+  <!-- IMAGE GRID (your pics) -->
+  <div class="xl:w-1/2 grid grid-cols-2 gap-3">
+
+    <img src="images/pic1.JPG" class="rounded-xl h-64 w-full object-cover hover:scale-105 transition"/>
+    <img src="images/pic2.JPG" class="rounded-xl h-64 w-full object-cover hover:scale-105 transition"/>
+
+    <img src="images/pic3.JPG" class="rounded-xl h-64 w-full object-cover col-span-2 hover:scale-105 transition"/>
+
   </div>
 
 </section>
 
-<!-- OPTIONAL LIGHT SECTION (contrast like modern sites) -->
-<section class="bg-[#f5f5f4] text-gray-900 mt-20 py-16 px-8">
-  <h2 class="text-3xl font-semibold text-center">Why Choose TAYU?</h2>
 
-  <div class="grid md:grid-cols-3 gap-8 mt-10">
-    <div class="bg-white p-6 rounded-xl shadow">
-      <h3 class="font-bold text-lg">Reliable Machines</h3>
-      <p class="mt-2 text-sm text-gray-600">Well-maintained heavy equipment ready for any job.</p>
-    </div>
+<!-- ===================== ABOUT ===================== -->
+<section id="about" class="mt-24 px-8 text-center max-w-3xl mx-auto">
 
-    <div class="bg-white p-6 rounded-xl shadow">
-      <h3 class="font-bold text-lg">Fast Delivery</h3>
-      <p class="mt-2 text-sm text-gray-600">Get machines delivered quickly to your site.</p>
-    </div>
+  <h2 class="text-3xl font-semibold text-yellow-400">Why BLU?</h2>
 
-    <div class="bg-white p-6 rounded-xl shadow">
-      <h3 class="font-bold text-lg">Affordable Rates</h3>
-      <p class="mt-2 text-sm text-gray-600">Competitive pricing for all project sizes.</p>
-    </div>
-  </div>
+  <p class="mt-4 text-gray-300">
+    We make construction faster by providing dependable heavy machinery
+    without the stress of ownership. Simple booking, fast response, and
+    reliable equipment availability.
+  </p>
+
 </section>
+
+
+<!-- ===================== FEATURED VISUAL SECTION ===================== -->
+<section id="featured" class="mt-24 px-8">
+
+  <h2 class="text-3xl font-semibold text-center mb-10 text-white">
+    Featured Visuals
+  </h2>
+
+  <div class="grid md:grid-cols-3 gap-6">
+
+    <img src="images/pic1.JPG" class="rounded-xl h-64 w-full object-cover hover:scale-105 transition"/>
+    <img src="images/pic2.JPG" class="rounded-xl h-64 w-full object-cover hover:scale-105 transition"/>
+    <img src="images/pic3.JPG" class="rounded-xl h-64 w-full object-cover hover:scale-105 transition"/>
+
+  </div>
+
+</section>
+
+
+<!-- ===================== CONTACT CTA ===================== -->
+<section id="contact" class="mt-24 px-8 text-center">
+
+  <h2 class="text-3xl font-semibold">Need Equipment Fast?</h2>
+
+  <p class="text-gray-400 mt-3">
+    Contact us instantly on WhatsApp and get a quote within minutes.
+  </p>
+
+  <a href="https://wa.me/251000000000"
+     class="mt-6 inline-block bg-yellow-500 text-black px-8 py-3 rounded-full font-medium hover:bg-yellow-400 transition">
+    Open WhatsApp
+  </a>
+
+</section>
+
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="mt-24 py-10 text-center text-gray-500 border-t border-gray-800">
+  © 2026 BLU Heavy Equipment Rental. All rights reserved.
+</footer>
 
 </body>
 </html>
-
