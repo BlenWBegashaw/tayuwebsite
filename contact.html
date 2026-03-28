@@ -10,9 +10,8 @@
 
 <body class="bg-gradient-to-b from-gray-900 via-gray-800 to-black text-white">
 
-<!-- NAVBAR -->
-<!-- paste the GLOBAL NAVBAR here -->
-<!-- ===================== -->
+
+<!-- ===================== NAVBAR ===================== -->
 <nav class="sticky top-0 z-50 backdrop-blur bg-gray-900/70 flex items-center justify-between px-8 py-4 border-b border-gray-700">
 
   <a href="index.html">
@@ -33,19 +32,21 @@
 </nav>
 
 
-<!-- ===================== CONTACT HEADER ===================== -->
+<!-- ===================== HEADER ===================== -->
 <section class="text-center mt-16 px-6">
 
-  <h1 class="text-4xl font-semibold text-yellow-400">Contact BLU</h1>
+  <h1 class="text-4xl font-semibold text-yellow-400">
+    Contact BLU
+  </h1>
 
   <p class="text-gray-300 mt-3">
-    We respond within minutes. Reach us via phone, email, or the form below.
+    We respond quickly via phone, email, or form.
   </p>
 
 </section>
 
 
-<!-- ===================== CONTACT INFO ===================== -->
+<!-- ===================== INFO ===================== -->
 <section class="mt-10 px-8 grid md:grid-cols-3 gap-6 text-center">
 
   <div class="bg-gray-800 p-6 rounded-xl">
@@ -55,11 +56,11 @@
 
   <div class="bg-gray-800 p-6 rounded-xl">
     <h3 class="text-yellow-400 font-semibold">Email</h3>
-    <p class="mt-2">blenbegashaw@gmail.com</p>
+    <p class="mt-2">info@blurental.com</p>
   </div>
 
   <div class="bg-gray-800 p-6 rounded-xl">
-    <h3 class="text-yellow-400 font-semibold">Address</h3>
+    <h3 class="text-yellow-400 font-semibold">Location</h3>
     <p class="mt-2">Addis Ababa, Ethiopia</p>
   </div>
 
@@ -71,11 +72,10 @@
 
   <h2 class="text-2xl font-semibold text-center mb-6">Send a Message</h2>
 
-  <!-- FORM (EMAIL SENDING) -->
-  <form action="https://formsubmit.co/YOUR_EMAIL_HERE" method="POST"
+  <form action="https://formsubmit.co/your-email@example.com"
+        method="POST"
         class="space-y-4 bg-gray-800 p-6 rounded-xl">
 
-    <!-- disable captcha -->
     <input type="hidden" name="_captcha" value="false">
 
     <input type="text" name="name" placeholder="Your Name"
@@ -84,8 +84,10 @@
     <input type="email" name="email" placeholder="Your Email"
            class="w-full p-3 rounded bg-gray-900 border border-gray-700" required>
 
-    <textarea name="message" rows="5" placeholder="Your Message"
-              class="w-full p-3 rounded bg-gray-900 border border-gray-700" required></textarea>
+    <!-- AUTO-FILL MESSAGE -->
+    <textarea id="messageBox" name="message" rows="6"
+              class="w-full p-3 rounded bg-gray-900 border border-gray-700"
+              placeholder="Your Message"></textarea>
 
     <button type="submit"
             class="w-full bg-yellow-500 text-black py-3 rounded font-semibold hover:bg-yellow-400">
@@ -98,9 +100,23 @@
 
 
 <!-- FOOTER -->
-<footer class="mt-20 py-10 text-center text-gray-500 border-t border-gray-800">
+<footer class="mt-24 py-10 text-center text-gray-500 border-t border-gray-800">
   © 2026 BLU Heavy Equipment Rental
 </footer>
 
+
+<!-- AUTO-FILL SCRIPT -->
+<script>
+window.onload = function () {
+  const params = new URLSearchParams(window.location.search);
+  const message = params.get("message");
+
+  if (message) {
+    document.getElementById("messageBox").value = message;
+  }
+};
+</script>
+
 </body>
+</html>
 </html>
