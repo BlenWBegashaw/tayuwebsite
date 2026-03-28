@@ -3,109 +3,82 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Equipment | TAJU BUSINESS PLC</title>
+  <title>Contact | BLU</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <style>
-    html { scroll-behavior: smooth; }
-
-    .fade-up {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.8s ease;
-    }
-    .fade-up.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .menu-hidden {
-      opacity: 0;
-      transform: translateY(-10px);
-      pointer-events: none;
-    }
-    .menu-show {
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: auto;
-    }
-  </style>
 </head>
 
-<body class="bg-gradient-to-b from-gray-900 via-gray-800 to-black text-white">
+<body class="bg-gradient-to-b from-gray-900 via-gray-800 to-black text-white overflow-x-hidden">
 
 <!-- ================= NAVBAR ================= -->
-<nav class="fixed top-0 w-full z-50 backdrop-blur bg-gray-900/70 px-4 py-3 border-b border-gray-700 flex items-center justify-between">
+<nav class="sticky top-0 z-50 backdrop-blur bg-gray-900/70 flex items-center justify-between px-4 md:px-8 py-3 border-b border-gray-700">
 
-  <img src="images/logo.png" class="w-10 mix-blend-screen" />
+  <img src="images/logo.png"
+       class="w-10 md:w-14 mix-blend-screen"
+       alt="TAJU Logo"/>
 
-  <ul class="hidden md:flex space-x-10 text-lg">
+  <!-- DESKTOP MENU -->
+  <ul class="hidden md:flex space-x-6 lg:space-x-14 text-sm md:text-2xl">
     <li><a href="index.html" class="hover:text-yellow-400">Home</a></li>
-    <li><a href="equipment.html" class="text-yellow-400">Equipment</a></li>
+    <li><a href="equipment.html" class="hover:text-yellow-400">Equipment</a></li>
     <li><a href="contact.html" class="hover:text-yellow-400">Contact</a></li>
   </ul>
 
+  <!-- HAMBURGER -->
   <button id="menuBtn" class="md:hidden text-2xl">☰</button>
 
+  <!-- MOBILE MENU -->
   <div id="mobileMenu"
-       class="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[90%] max-w-md bg-black border-t-4 border-yellow-400 rounded-lg shadow-2xl menu-hidden">
+       class="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[90%] max-w-md bg-black border-t-4 border-yellow-400 rounded-lg shadow-2xl hidden">
 
     <div class="flex flex-col text-xl py-6 px-6 space-y-6">
       <a href="index.html" onclick="toggleMenu()">Home</a>
-      <a href="equipment.html" onclick="toggleMenu()" class="text-yellow-400">Equipment</a>
-      <a href="contact.html" onclick="toggleMenu()">Contact</a>
+      <a href="equipment.html" onclick="toggleMenu()">Equipment</a>
+      <a href="contact.html" onclick="toggleMenu()" class="text-yellow-400">Contact</a>
     </div>
+
   </div>
 </nav>
 
 <!-- ================= HEADER ================= -->
-<section class="pt-28 text-center px-6 fade-up">
-  <h1 class="text-4xl font-bold text-yellow-400">Available Equipment</h1>
-  <p class="text-gray-300 mt-3">Reliable machinery for mining, quarry, and construction.</p>
+<section class="text-center py-8 md:py-12 px-4">
+  <h1 class="text-3xl md:text-4xl font-bold text-yellow-400">
+    Contact BLU
+  </h1>
+
+  <p class="text-gray-300 mt-2 text-sm md:text-base">
+    We respond quickly to all inquiries.
+  </p>
 </section>
 
-<!-- ================= CARD ================= -->
-<section class="mt-12 px-6 max-w-5xl mx-auto fade-up">
+<!-- ================= CONTACT INFO ================= -->
+<section class="max-w-5xl mx-auto px-4 md:px-8 mb-10">
 
-  <div class="bg-gray-800 rounded-2xl overflow-hidden border border-gray-700 hover:border-yellow-400 transition grid md:grid-cols-2">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 text-center">
 
-    <div class="bg-gray-900 p-6 flex items-center justify-center">
-      <img src="images/pic5.png" class="w-full max-h-96 object-contain rounded-xl" />
-    </div>
+    <a href="tel:+251900000000"
+       class="bg-gray-800 p-5 md:p-6 rounded-xl border border-gray-700 hover:border-yellow-400 transition">
 
-    <div class="p-8">
+      <h2 class="text-lg font-semibold text-yellow-400">Phone</h2>
+      <p class="text-gray-300 mt-2 text-sm md:text-base">+251 900 000 000</p>
+      <p class="text-xs md:text-sm text-gray-500 mt-1">Click to call</p>
 
-      <h2 class="text-2xl font-bold text-yellow-400">
-        Hyundai HX340SL Excavator (2025)
-      </h2>
+    </a>
 
-      <p class="text-gray-300 mt-3">
-        Heavy-duty excavator built for mining, quarry, and large construction projects.
-      </p>
+    <a href="mailto:info@blu.com"
+       class="bg-gray-800 p-5 md:p-6 rounded-xl border border-gray-700 hover:border-yellow-400 transition">
 
-      <div class="mt-5 space-y-2 text-sm text-gray-300">
-        <p>⚙️ Power: ~260 HP</p>
-        <p>🪨 Bucket: 1.6 – 1.8 m³</p>
-        <p>⛽ Fuel: 20–25 L/hr</p>
-        <p>🏗️ Use: Mining • Quarry • Excavation</p>
-      </div>
+      <h2 class="text-lg font-semibold text-yellow-400">Email</h2>
+      <p class="text-gray-300 mt-2 text-sm md:text-base">info@blu.com</p>
+      <p class="text-xs md:text-sm text-gray-500 mt-1">Click to email</p>
 
-      <select id="machineSelect"
-              class="w-full mt-6 p-3 rounded-lg bg-gray-900 border border-gray-700 text-white">
+    </a>
 
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
+    <div class="bg-gray-800 p-5 md:p-6 rounded-xl border border-gray-700">
 
-      </select>
-
-      <button onclick="bookMachine()"
-              class="mt-6 w-full bg-yellow-400 text-black py-3 rounded-xl font-bold hover:bg-yellow-300 transition">
-
-        Get Quote
-
-      </button>
+      <h2 class="text-lg font-semibold text-yellow-400">Address</h2>
+      <p class="text-gray-300 mt-2 text-sm md:text-base">Addis Ababa, Ethiopia</p>
+      <p class="text-xs md:text-sm text-gray-500 mt-1">Main Office</p>
 
     </div>
 
@@ -113,50 +86,107 @@
 
 </section>
 
-<!-- ================= FOOTER ================= -->
-<footer class="mt-20 py-8 text-center text-gray-500 border-t border-gray-800 text-sm">
-  © 2026 TAJU Heavy Equipment Rental
-</footer>
+<!-- ================= FORM ================= -->
+<section class="max-w-4xl mx-auto px-4 pb-16">
+
+  <form id="contactForm"
+        action="https://formspree.io/f/YOUR_FORM_ID"
+        method="POST"
+        class="bg-gray-800 p-5 md:p-8 rounded-xl space-y-4 border border-gray-700 shadow-lg">
+
+    <input type="text"
+           name="name"
+           placeholder="Your Name"
+           required
+           class="w-full p-4 rounded bg-gray-900 border border-gray-700 text-white text-base">
+
+    <input type="email"
+           name="email"
+           placeholder="Your Email"
+           required
+           class="w-full p-4 rounded bg-gray-900 border border-gray-700 text-white text-base">
+
+    <textarea name="message"
+              id="messageBox"
+              rows="6"
+              placeholder="Your Message"
+              required
+              class="w-full p-4 rounded bg-gray-900 border border-gray-700 text-white text-base"></textarea>
+
+    <button type="submit"
+            class="w-full bg-yellow-500 text-black py-3 rounded font-semibold hover:bg-yellow-400 transition active:scale-95 text-base">
+      Send Message
+    </button>
+
+  </form>
+
+</section>
+
+<!-- ================= SUCCESS MESSAGE ================= -->
+<div id="successMessage"
+     class="hidden fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-green-500 text-black px-4 md:px-6 py-3 rounded-full shadow-lg font-semibold text-sm md:text-base">
+  ✅ Message Sent Successfully
+</div>
 
 <!-- ================= SCRIPTS ================= -->
 <script>
+// hamburger toggle
 const menuBtn = document.getElementById("menuBtn");
 const mobileMenu = document.getElementById("mobileMenu");
 
 function toggleMenu() {
-  mobileMenu.classList.toggle("menu-show");
-  mobileMenu.classList.toggle("menu-hidden");
+  mobileMenu.classList.toggle("hidden");
 }
 
 menuBtn.addEventListener("click", toggleMenu);
 
+// close when clicking outside
 document.addEventListener("click", function(e) {
   if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
-    mobileMenu.classList.add("menu-hidden");
-    mobileMenu.classList.remove("menu-show");
+    mobileMenu.classList.add("hidden");
   }
 });
 
-// fade animation
-const faders = document.querySelectorAll(".fade-up");
-const appear = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add("show");
+// auto-fill message
+window.onload = function () {
+  const params = new URLSearchParams(window.location.search);
+  const message = params.get("message");
+
+  if (message) {
+    const formatted =
+`📩 Equipment Quote Request
+
+${message}
+
+---
+Sent from BLU Equipment Page`;
+
+    document.getElementById("messageBox").value = formatted;
+  }
+};
+
+// form submit
+const form = document.getElementById("contactForm");
+const successMessage = document.getElementById("successMessage");
+
+form.addEventListener("submit", async function (e) {
+  e.preventDefault();
+
+  const data = new FormData(form);
+
+  await fetch(form.action, {
+    method: "POST",
+    body: data,
+    headers: { "Accept": "application/json" }
   });
+
+  successMessage.classList.remove("hidden");
+  form.reset();
+
+  setTimeout(() => {
+    successMessage.classList.add("hidden");
+  }, 3000);
 });
-faders.forEach(el => appear.observe(el));
-
-// booking
-function bookMachine() {
-  const selected = document.getElementById("machineSelect").value;
-
-  const message =
-    "Hello TAJU,\n\nI am interested in renting: " + selected +
-    ". Please provide availability and pricing.\n\nThank you.";
-
-  window.location.href =
-    "contact.html?message=" + encodeURIComponent(message);
-}
 </script>
 
 </body>
