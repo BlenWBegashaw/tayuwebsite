@@ -1,46 +1,79 @@
-
 <!-- ===================== equipment.html ===================== -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Equipment</title>
+  <title>BLU Equipment</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-[#1f2937] text-white">
 
-<nav class="flex items-center justify-between px-8 py-5">
-  <img src="images/logo.png" class="w-36" />
-  <ul class="flex gap-8">
+<body class="bg-gradient-to-b from-gray-900 via-gray-800 to-black text-white">
+
+<!-- ===================== NAV ===================== -->
+<nav class="flex items-center justify-between px-8 py-5 border-b border-gray-700">
+
+  <img src="images/logo.JPG" class="w-32 md:w-40" />
+
+  <ul class="flex gap-6">
     <li><a href="index.html" class="hover:text-yellow-400">Home</a></li>
-    <li><a href="equipment.html" class="hover:text-yellow-400">Equipment</a></li>
+    <li><a href="equipment.html" class="text-yellow-400">Equipment</a></li>
     <li><a href="contact.html" class="hover:text-yellow-400">Contact</a></li>
   </ul>
+
 </nav>
 
+<!-- ===================== HEADER ===================== -->
 <section class="px-8 py-12">
-  <h1 class="text-4xl font-semibold mb-8">Available Equipment</h1>
 
+  <h1 class="text-4xl font-semibold mb-2">Available Equipment</h1>
+  <p class="text-gray-400 mb-10">
+    Heavy-duty machinery available for rent.
+  </p>
+
+  <!-- ===================== GRID ===================== -->
   <div class="grid md:grid-cols-3 gap-6">
 
-    <div class="bg-gray-800 rounded-xl p-4 hover:scale-105 transition">
-      <img src="images/excavator.png" class="rounded-xl">
-      <h2 class="text-xl mt-3">Excavator</h2>
-      <p class="text-yellow-400">$500/day</p>
-    </div>
+    <!-- ===================== ONLY EQUIPMENT ===================== -->
+    <div class="bg-gray-800 rounded-2xl overflow-hidden hover:scale-105 transition">
 
-    <div class="bg-gray-800 rounded-xl p-4 hover:scale-105 transition">
-      <img src="images/bulldozer.png" class="rounded-xl">
-      <h2 class="text-xl mt-3">Bulldozer</h2>
-      <p class="text-yellow-400">$700/day</p>
-    </div>
+      <img src="images/pic1.JPG" class="w-full h-52 object-cover">
 
-    <div class="bg-gray-800 rounded-xl p-4 hover:scale-105 transition">
-      <img src="images/truck.png" class="rounded-xl">
-      <h2 class="text-xl mt-3">Dump Truck</h2>
-      <p class="text-yellow-400">$400/day</p>
+      <div class="p-5">
+
+        <h2 class="text-xl font-semibold">
+          Hyundai HX340SL Excavator (2025)
+        </h2>
+
+        <p class="text-yellow-400 mt-1">
+          34 Ton Class • Heavy Duty Mining Excavator
+        </p>
+
+        <ul class="text-sm text-gray-300 mt-3 space-y-1">
+          <li>• Power: ~260 HP</li>
+          <li>• Bucket: 1.6 – 1.8 m³</li>
+          <li>• Breaker Compatible (3–4 ton)</li>
+          <li>• Fuel: ~20–25 L/hr</li>
+          <li>• Best Use: Mining, quarry, rock excavation</li>
+        </ul>
+
+        <a href="https://wa.me/251000000000?text=Hi%20I%20want%20to%20rent%20the%20HX340SL%20Excavator"
+           class="mt-4 inline-block bg-yellow-500 text-black px-4 py-2 rounded-full font-medium hover:bg-yellow-400 transition">
+          Rent via WhatsApp
+        </a>
+
+      </div>
+
     </div>
 
   </div>
+
 </section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="text-center text-gray-500 py-10 border-t border-gray-800 mt-16">
+  © 2026 BLU Heavy Equipment Rental
+</footer>
+
+</body>
+</html>
