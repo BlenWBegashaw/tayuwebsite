@@ -8,8 +8,17 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
-    html {
-      scroll-behavior: smooth;
+    html { scroll-behavior: smooth; }
+
+    /* Simple fade animation */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease;
+    }
+    .fade-up.show {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
@@ -17,134 +26,108 @@
 <body class="bg-gradient-to-b from-gray-900 via-gray-800 to-black text-white">
 
 <!-- ===================== NAVBAR ===================== -->
-<!-- ===================== NAVBAR ===================== -->
-<nav class="sticky top-0 z-50 backdrop-blur bg-gray-900/70 border-b border-gray-700">
+<nav class="fixed top-0 w-full z-50 backdrop-blur bg-gray-900/70 flex items-center justify-between px-4 py-3 border-b border-gray-700">
 
-  <div class="flex items-center justify-between px-4 md:px-8 py-3">
+  <img src="images/logo.png" class="w-10 mix-blend-screen" />
 
-    <!-- LOGO -->
-    <img src="images/logo.png"
-         class="w-10 md:w-14 mix-blend-screen"
-         alt="TAJU Logo"/>
+  <!-- DESKTOP MENU -->
+  <ul class="hidden md:flex space-x-10 text-lg">
+    <li><a href="#" class="hover:text-yellow-400">Home</a></li>
+    <li><a href="#about" class="hover:text-yellow-400">Equipment</a></li>
+    <li><a href="#contact" class="hover:text-yellow-400">Contact</a></li>
+  </ul>
 
-    <!-- DESKTOP LINKS -->
-    <ul class="hidden md:flex space-x-8 text-base font-medium">
-      <li><a href="index.html" class="hover:text-yellow-400">Home</a></li>
-      <li><a href="equipment.html" class="hover:text-yellow-400">Equipment</a></li>
-      <li><a href="contact.html" class="hover:text-yellow-400">Contact</a></li>
-    </ul>
-
-    <!-- HAMBURGER -->
-    <button onclick="openMenu()" class="md:hidden text-white text-3xl">
-      ☰
-    </button>
-
-  </div>
+  <!-- MOBILE MENU BUTTON -->
+  <button id="menuBtn" class="md:hidden text-2xl">
+    ☰
+  </button>
 </nav>
 
-<!-- ===================== SIDE MENU ===================== -->
-
-<!-- OVERLAY -->
-<div id="overlay"
-     class="hidden fixed inset-0 bg-black/40 backdrop-blur-sm z-40"
-     onclick="closeMenu()"></div>
-
-<!-- SIDE PANEL -->
-<div id="sideMenu"
-     class="fixed top-0 right-0 h-full w-72 bg-gray-900/80 backdrop-blur-xl border-l border-gray-700 z-50
-            transform translate-x-full transition-transform duration-300">
-
-  <!-- CLOSE BUTTON -->
-  <div class="flex justify-end p-4">
-    <button onclick="closeMenu()" class="text-white text-3xl">×</button>
-  </div>
-
-  <!-- LINKS -->
-  <div class="flex flex-col space-y-6 px-6 text-lg">
-    <a href="index.html" class="hover:text-yellow-400">Home</a>
-    <a href="equipment.html" class="hover:text-yellow-400">Equipment</a>
-    <a href="contact.html" class="hover:text-yellow-400">Contact</a>
-  </div>
-
+<!-- MOBILE MENU -->
+<div id="mobileMenu" class="fixed inset-0 bg-black/95 z-40 hidden flex-col items-center justify-center text-xl space-y-6">
+  <a href="#" onclick="toggleMenu()">Home</a>
+  <a href="#about" onclick="toggleMenu()">Equipment</a>
+  <a href="#contact" onclick="toggleMenu()">Contact</a>
 </div>
 
-<!-- ===================== SCRIPT ===================== -->
-<script>
-  const menu = document.getElementById("sideMenu");
-  const overlay = document.getElementById("overlay");
+<!-- ===================== FLOATING RENT BUTTON ===================== -->
+<div class="fixed left-0 top-1/2 -translate-y-1/2 z-50">
+  <a href="#contact"
+     class="bg-yellow-400 text-black font-bold px-3 py-6 rounded-r-xl rotate-180 [writing-mode:vertical-rl] shadow-lg">
+    RENT NOW
+  </a>
+</div>
 
-  function openMenu() {
-    menu.classList.remove("translate-x-full");
-    overlay.classList.remove("hidden");
-  }
-
-  function closeMenu() {
-    menu.classList.add("translate-x-full");
-    overlay.classList.add("hidden");
-  }
-</script>
 <!-- ===================== HERO ===================== -->
-<section class="px-4 md:px-8 mt-10 md:mt-16 flex flex-col xl:flex-row items-start gap-10">
+<section class="relative min-h-screen flex flex-col justify-center items-center text-center px-6 overflow-hidden">
 
-  <!-- TEXT SIDE -->
-  <div class="w-full xl:w-1/2 text-center xl:text-left">
+  <!-- BACKGROUND -->
+  <div class="absolute inset-0">
+    <img src="images/pic1.JPG"
+         class="w-full h-full object-cover opacity-20">
+  </div>
 
-    <!-- BRAND -->
-    <p class="text-yellow-400 font-semibold tracking-widest text-sm md:text-lg">
+  <!-- DARK OVERLAY -->
+  <div class="absolute inset-0 bg-gradient-to-b from-gray-900 via-gray-900/80 to-black"></div>
+
+  <!-- CONTENT -->
+  <div class="relative z-10 max-w-md fade-up">
+
+    <img src="images/logo.png" class="w-14 mx-auto mb-6 mix-blend-screen">
+
+    <p class="text-yellow-400 tracking-widest text-sm mb-4">
       TAJU BUSINESS PLC
     </p>
 
-    <!-- TITLE -->
-    <h1 class="mt-3 text-2xl md:text-5xl xl:text-6xl font-semibold leading-tight">
-      Heavy Construction Machinery and Equipment <br/>
-      <span class="text-yellow-400 font-light">Rental in Ethiopia</span>
+    <h1 class="text-4xl font-extrabold uppercase leading-[1.1] tracking-wide mb-6">
+      Heavy Equipment <br> Rental Services
     </h1>
 
-    <!-- ADDRESS -->
-    <p class="mt-6 text-gray-300 text-sm md:text-lg">
-      📍 Addis Ababa, Ethiopia
+    <p class="text-gray-300 text-base leading-relaxed mb-8">
+      Reliable machinery for mining, quarry, and construction projects across Ethiopia.
+      Delivered where the work happens.
     </p>
 
-  </div>
+    <a href="#contact"
+       class="inline-block bg-yellow-400 text-black font-bold uppercase px-10 py-4 rounded-2xl text-lg shadow-lg hover:bg-yellow-300 transition">
+      Get a Quote
+    </a>
 
-  <!-- IMAGE SIDE -->
-  <div class="w-full xl:w-1/2 flex justify-center xl:justify-end">
-
-    <img src="images/pic1.JPG"
-         class="w-full max-w-sm md:max-w-lg xl:max-w-full rounded-xl object-contain bg-gray-800 hover:scale-105 transition"
-         alt="Equipment"/>
+    <div class="mt-6 text-gray-400 text-sm">
+      📍 Addis Ababa, Ethiopia
+    </div>
 
   </div>
 
 </section>
 
 <!-- ===================== ABOUT ===================== -->
-<section id="about" class="mt-20 md:mt-24 px-4 md:px-8 text-center max-w-6xl mx-auto">
+<section id="about" class="mt-20 px-6 text-center max-w-6xl mx-auto fade-up">
 
-  <h2 class="text-3xl md:text-6xl font-semibold text-yellow-400">
+  <h2 class="text-3xl md:text-5xl font-bold text-yellow-400">
     Why TAJU?
   </h2>
 
-  <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+  <div class="mt-10 grid md:grid-cols-3 gap-6">
 
     <div class="bg-gray-800 p-6 rounded-xl border border-gray-700 hover:border-yellow-400 transition">
-      <h3 class="text-xl md:text-2xl font-semibold text-yellow-400">Fast Response</h3>
-      <p class="mt-3 text-gray-300 text-sm md:text-base leading-relaxed">
-        We respond quickly to all rental requests so your project never gets delayed.
+      <h3 class="text-xl font-semibold text-yellow-400">Fast Response</h3>
+      <p class="mt-3 text-gray-300">
+        Quick response so your project never stops.
       </p>
     </div>
 
     <div class="bg-gray-800 p-6 rounded-xl border border-gray-700 hover:border-yellow-400 transition">
-      <h3 class="text-xl md:text-2xl font-semibold text-yellow-400">Trusted Service</h3>
-      <p class="mt-3 text-gray-300 text-sm md:text-base leading-relaxed">
-        Reliable machinery and professional support for all construction needs.
+      <h3 class="text-xl font-semibold text-yellow-400">Trusted Service</h3>
+      <p class="mt-3 text-gray-300">
+        Reliable machines and expert support.
       </p>
     </div>
 
     <div class="bg-gray-800 p-6 rounded-xl border border-gray-700 hover:border-yellow-400 transition">
-      <h3 class="text-xl md:text-2xl font-semibold text-yellow-400">Heavy Equipment Ready</h3>
-      <p class="mt-3 text-gray-300 text-sm md:text-base leading-relaxed">
-        Well-maintained machines ready for mining, quarry, and construction work.
+      <h3 class="text-xl font-semibold text-yellow-400">Ready Equipment</h3>
+      <p class="mt-3 text-gray-300">
+        Machines ready for any heavy-duty job.
       </p>
     </div>
 
@@ -152,23 +135,51 @@
 
 </section>
 
-<!-- ===================== CONTACT CTA ===================== -->
-<section id="contact" class="mt-20 md:mt-24 px-4 md:px-8 text-center">
+<!-- ===================== CONTACT ===================== -->
+<section id="contact" class="mt-20 px-6 text-center fade-up">
 
-  <h2 class="text-2xl md:text-3xl font-semibold">
-    Need Equipment Fast?
-  </h2>
+  <h2 class="text-3xl font-bold">Need Equipment Fast?</h2>
 
-  <p class="text-gray-400 mt-3 text-sm md:text-base">
-    Contact us instantly on the phone and get a quote within minutes.
+  <p class="text-gray-400 mt-3">
+    Contact us and get a quote within minutes.
   </p>
+
+  <a href="tel:+251900000000"
+     class="inline-block mt-6 bg-yellow-400 text-black px-8 py-4 rounded-xl font-bold">
+    Call Now
+  </a>
 
 </section>
 
 <!-- ===================== FOOTER ===================== -->
-<footer class="mt-20 md:mt-24 py-8 text-center text-gray-500 border-t border-gray-800 text-sm">
-  © 2026 TAJU Heavy Equipment Rental. All rights reserved.
+<footer class="mt-20 py-8 text-center text-gray-500 border-t border-gray-800 text-sm">
+  © 2026 TAJU Heavy Equipment Rental
 </footer>
+
+<!-- ===================== SCRIPTS ===================== -->
+<script>
+  const menuBtn = document.getElementById("menuBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  function toggleMenu() {
+    mobileMenu.classList.toggle("hidden");
+  }
+
+  menuBtn.addEventListener("click", toggleMenu);
+
+  // Fade animation on scroll
+  const faders = document.querySelectorAll(".fade-up");
+
+  const appear = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+    });
+  });
+
+  faders.forEach(el => appear.observe(el));
+</script>
 
 </body>
 </html>
