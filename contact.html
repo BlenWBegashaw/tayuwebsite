@@ -8,10 +8,9 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-gradient-to-b from-gray-900 via-gray-800 to-black text-white">
+<body class="bg-gradient-to-b from-gray-900 via-gray-800 to-black text-white overflow-x-hidden">
 
 <!-- ================= NAVBAR ================= -->
-<!-- ===================== NAVBAR ===================== -->
 <nav class="sticky top-0 z-50 backdrop-blur bg-gray-900/70 flex items-center justify-between px-4 md:px-8 py-3 md:py-4 border-b border-gray-700">
 
   <img src="images/logo.png"
@@ -27,8 +26,8 @@
 </nav>
 
 <!-- ================= HEADER ================= -->
-<section class="text-center py-10 px-4">
-  <h1 class="text-3xl md:text-4xl font-bold text-yellow-400">
+<section class="text-center py-8 md:py-12 px-4">
+  <h1 class="text-2xl md:text-4xl font-bold text-yellow-400">
     Contact BLU
   </h1>
 
@@ -40,11 +39,10 @@
 <!-- ================= CONTACT INFO ================= -->
 <section class="max-w-5xl mx-auto px-4 md:px-8 mb-10">
 
-  <div class="grid md:grid-cols-3 gap-6 text-center">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 text-center">
 
-    <!-- PHONE -->
     <a href="tel:+251900000000"
-       class="bg-gray-800 p-6 rounded-xl border border-gray-700 hover:border-yellow-400 transition">
+       class="bg-gray-800 p-5 md:p-6 rounded-xl border border-gray-700 hover:border-yellow-400 transition">
 
       <h2 class="text-lg font-semibold text-yellow-400">Phone</h2>
       <p class="text-gray-300 mt-2">+251 900 000 000</p>
@@ -52,9 +50,8 @@
 
     </a>
 
-    <!-- EMAIL -->
     <a href="mailto:info@blu.com"
-       class="bg-gray-800 p-6 rounded-xl border border-gray-700 hover:border-yellow-400 transition">
+       class="bg-gray-800 p-5 md:p-6 rounded-xl border border-gray-700 hover:border-yellow-400 transition">
 
       <h2 class="text-lg font-semibold text-yellow-400">Email</h2>
       <p class="text-gray-300 mt-2">info@blu.com</p>
@@ -62,8 +59,7 @@
 
     </a>
 
-    <!-- ADDRESS -->
-    <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
+    <div class="bg-gray-800 p-5 md:p-6 rounded-xl border border-gray-700">
 
       <h2 class="text-lg font-semibold text-yellow-400">Address</h2>
       <p class="text-gray-300 mt-2">Addis Ababa, Ethiopia</p>
@@ -81,29 +77,29 @@
   <form id="contactForm"
         action="https://formspree.io/f/xojpjgrg"
         method="POST"
-        class="bg-gray-800 p-5 md:p-8 rounded-xl space-y-4 border border-gray-700 shadow-lg">
+        class="bg-gray-800 p-4 md:p-8 rounded-xl space-y-4 border border-gray-700 shadow-lg">
 
     <input type="text"
            name="name"
            placeholder="Your Name"
            required
-           class="w-full p-3 rounded bg-gray-900 border border-gray-700 text-white">
+           class="w-full p-3 rounded bg-gray-900 border border-gray-700 text-white text-sm md:text-base">
 
     <input type="email"
            name="email"
            placeholder="Your Email"
            required
-           class="w-full p-3 rounded bg-gray-900 border border-gray-700 text-white">
+           class="w-full p-3 rounded bg-gray-900 border border-gray-700 text-white text-sm md:text-base">
 
     <textarea name="message"
               id="messageBox"
               rows="6"
               placeholder="Your Message"
               required
-              class="w-full p-3 rounded bg-gray-900 border border-gray-700 text-white"></textarea>
+              class="w-full p-3 rounded bg-gray-900 border border-gray-700 text-white text-sm md:text-base"></textarea>
 
     <button type="submit"
-            class="w-full bg-yellow-500 text-black py-3 rounded font-semibold hover:bg-yellow-400 transition">
+            class="w-full bg-yellow-500 text-black py-3 rounded font-semibold hover:bg-yellow-400 transition active:scale-95">
       Send Message
     </button>
 
@@ -113,20 +109,17 @@
 
 <!-- ================= SUCCESS MESSAGE ================= -->
 <div id="successMessage"
-     class="hidden fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-green-500 text-black px-6 py-3 rounded-full shadow-lg font-semibold">
+     class="hidden fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-green-500 text-black px-4 md:px-6 py-3 rounded-full shadow-lg font-semibold text-sm md:text-base">
   ✅ Message Sent Successfully
 </div>
 
-<!-- ================= AUTO FILL + FORM SCRIPT ================= -->
+<!-- ================= SCRIPT ================= -->
 <script>
-// AUTO FILL FROM EQUIPMENT PAGE
 window.onload = function () {
   const params = new URLSearchParams(window.location.search);
-  let message = params.get("message");
+  const message = params.get("message");
 
   if (message) {
-    message = decodeURIComponent(message);
-
     const formatted =
 `📩 Equipment Quote Request
 
@@ -139,8 +132,6 @@ Sent from BLU Equipment Page`;
   }
 };
 
-
-// NO PAGE RELOAD FORM SUBMISSION
 const form = document.getElementById("contactForm");
 const successMessage = document.getElementById("successMessage");
 
@@ -155,13 +146,10 @@ form.addEventListener("submit", async function (e) {
     headers: { "Accept": "application/json" }
   });
 
-  // show success popup
   successMessage.classList.remove("hidden");
 
-  // reset form
   form.reset();
 
-  // hide popup after 3 seconds
   setTimeout(() => {
     successMessage.classList.add("hidden");
   }, 3000);
@@ -170,3 +158,4 @@ form.addEventListener("submit", async function (e) {
 
 </body>
 </html>
+
