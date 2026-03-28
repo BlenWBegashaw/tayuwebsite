@@ -2,124 +2,106 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact | BLU Rental</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | BLU</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-gradient-to-b from-gray-900 via-gray-800 to-black text-white">
+<body class="bg-gray-950 text-white">
 
 <!-- ===================== NAVBAR ===================== -->
-<!-- ===================== NAVBAR ===================== -->
-<nav class="sticky top-0 z-50 backdrop-blur bg-gray-900/70 flex items-center justify-between px-8 py-4 border-b border-gray-700">
+<nav class="sticky top-0 z-50 backdrop-blur bg-gray-900/70 flex items-center justify-between px-4 md:px-8 py-4 border-b border-gray-700">
 
-  <!-- LOGO (smaller, far left) -->
+  <!-- LOGO -->
   <img src="images/logo.png"
-       class="w-12 md:w-14 bg-transparent mix-blend-screen"
+       class="w-12 md:w-16 bg-transparent mix-blend-screen"
        alt="BLU Logo"/>
 
-  <!-- LINKS -->
-  <ul class="hidden md:flex space-x-14 text-lg font-medium">
-    <li>
-      <a href="index.html" class="hover:text-yellow-400">Home</a>
-    </li>
-    <li>
-      <a href="equipment.html" class="hover:text-yellow-400">Equipment</a>
-    </li>
-    <li>
-      <a href="contact.html" class="hover:text-yellow-400">Contact</a>
-    </li>
+  <!-- MOBILE MENU ICON -->
+  <button class="md:hidden text-white text-2xl">
+    ☰
+  </button>
+
+  <!-- DESKTOP LINKS -->
+  <ul class="hidden md:flex space-x-10 text-lg font-medium">
+    <li><a href="index.html" class="hover:text-yellow-400">Home</a></li>
+    <li><a href="equipment.html" class="hover:text-yellow-400">Equipment</a></li>
+    <li><a href="contact.html" class="text-yellow-400">Contact</a></li>
   </ul>
 
 </nav>
 
-
-<!-- ================= HEADER ================= -->
-<section class="text-center mt-16 px-6">
-
-  <h1 class="text-4xl font-semibold text-yellow-400">
-    Contact BLU
-  </h1>
-
-  <p class="text-gray-300 mt-3">
-    We respond quickly via phone, email, or form.
+<!-- ===================== HERO ===================== -->
+<section class="text-center py-10 px-4">
+  <h1 class="text-2xl md:text-4xl font-bold">Get In Touch</h1>
+  <p class="text-gray-400 mt-2 text-sm md:text-base">
+    We reply as fast as possible. Send us a message below.
   </p>
-
 </section>
 
-<!-- ================= INFO ================= -->
-<section class="mt-10 px-8 grid md:grid-cols-3 gap-6 text-center">
+<!-- ===================== CONTACT SECTION ===================== -->
+<section class="max-w-6xl mx-auto px-4 md:px-8 pb-16">
 
-  <div class="bg-gray-800 p-6 rounded-xl">
-    <h3 class="text-yellow-400 font-semibold">Phone</h3>
-    <p class="mt-2">+251 91 000 0000</p>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+
+    <!-- LEFT INFO -->
+    <div class="space-y-8">
+
+      <div>
+        <h2 class="text-lg font-semibold">Phone</h2>
+        <p class="text-gray-400">+251 900 000 000</p>
+      </div>
+
+      <div>
+        <h2 class="text-lg font-semibold">Email</h2>
+        <p class="text-gray-400">info@blu.com</p>
+      </div>
+
+      <div>
+        <h2 class="text-lg font-semibold">Location</h2>
+        <p class="text-gray-400">Addis Ababa, Ethiopia</p>
+      </div>
+
+      <div class="text-gray-500 text-sm">
+        Working hours: Mon - Sat, 8:00 AM - 6:00 PM
+      </div>
+
+    </div>
+
+    <!-- RIGHT FORM -->
+    <form class="space-y-4 bg-gray-900 p-6 rounded-lg border border-gray-800">
+
+      <input type="text"
+             placeholder="Your Name"
+             class="w-full p-3 rounded bg-gray-800 border border-gray-700 focus:outline-none focus:border-yellow-400 text-white"/>
+
+      <input type="email"
+             placeholder="Your Email"
+             class="w-full p-3 rounded bg-gray-800 border border-gray-700 focus:outline-none focus:border-yellow-400 text-white"/>
+
+      <input type="text"
+             placeholder="Subject"
+             class="w-full p-3 rounded bg-gray-800 border border-gray-700 focus:outline-none focus:border-yellow-400 text-white"/>
+
+      <textarea rows="5"
+                placeholder="Your Message"
+                class="w-full p-3 rounded bg-gray-800 border border-gray-700 focus:outline-none focus:border-yellow-400 text-white"></textarea>
+
+      <button type="submit"
+              class="w-full bg-yellow-400 text-black py-3 rounded font-semibold hover:bg-yellow-300 transition">
+        Send Message
+      </button>
+
+    </form>
+
   </div>
-
-  <div class="bg-gray-800 p-6 rounded-xl">
-    <h3 class="text-yellow-400 font-semibold">Email</h3>
-    <p class="mt-2">blenwelde@gmail.com</p>
-  </div>
-
-  <div class="bg-gray-800 p-6 rounded-xl">
-    <h3 class="text-yellow-400 font-semibold">Location</h3>
-    <p class="mt-2">Addis Ababa, Ethiopia</p>
-  </div>
-
 </section>
 
-<!-- ================= FORM ================= -->
-<section class="mt-16 px-8 max-w-2xl mx-auto">
-
-  <h2 class="text-2xl font-semibold text-center mb-6">
-    Send a Message
-  </h2>
-
-  <form action="https://formsubmit.co/info@blu.com"
-        method="POST"
-        class="space-y-4 bg-gray-800 p-6 rounded-xl">
-
-    <!-- disable captcha -->
-    <input type="hidden" name="_captcha" value="false">
-
-    <!-- optional redirect -->
-    <input type="hidden" name="_next" value="contact.html">
-
-    <input type="text" name="name" placeholder="Your Name"
-      class="w-full p-3 rounded bg-gray-900 border border-gray-700" required>
-
-    <input type="email" name="email" placeholder="Your Email"
-      class="w-full p-3 rounded bg-gray-900 border border-gray-700" required>
-
-    <textarea id="messageBox" name="message" rows="6"
-      class="w-full p-3 rounded bg-gray-900 border border-gray-700"
-      placeholder="Your Message"></textarea>
-
-    <button type="submit"
-      class="w-full bg-yellow-500 text-black py-3 rounded font-semibold hover:bg-yellow-400">
-      Send Message
-    </button>
-
-  </form>
-
-</section>
-
-<!-- ================= FOOTER ================= -->
-<footer class="mt-24 py-10 text-center text-gray-500 border-t border-gray-800">
-  © 2026 BLU Heavy Equipment Rental
+<!-- ===================== FOOTER ===================== -->
+<footer class="text-center text-gray-500 text-sm py-6 border-t border-gray-800">
+  © 2026 BLU. All rights reserved.
 </footer>
-
-<!-- ================= AUTO FILL SCRIPT ================= -->
-<script>
-window.onload = function () {
-  const params = new URLSearchParams(window.location.search);
-  const message = params.get("message");
-
-  if (message) {
-    document.getElementById("messageBox").value = decodeURIComponent(message);
-  }
-};
-</script>
 
 </body>
 </html>
