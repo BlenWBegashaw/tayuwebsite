@@ -48,9 +48,9 @@
 
   <button id="menuBtn" class="md:hidden text-2xl">☰</button>
 
-  <!-- FIXED: removed menu-hidden misuse -->
+  <!-- MOBILE MENU -->
   <div id="mobileMenu"
-       class="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[90%] max-w-md bg-black border-t-4 border-yellow-400 rounded-lg shadow-2xl opacity-0 pointer-events-none transition">
+       class="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[90%] max-w-md bg-black border-t-4 border-yellow-400 rounded-lg shadow-2xl opacity-0 pointer-events-none transition-all duration-300">
 
     <div class="flex flex-col text-xl py-6 px-6 space-y-6">
       <a href="index.html" onclick="toggleMenu()">Home</a>
@@ -76,7 +76,7 @@
 
   <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
 
-    <!-- LEFT: CONTACT INFO -->
+    <!-- LEFT -->
     <div class="space-y-4">
 
       <h2 class="text-xl font-semibold text-white">Contact Us</h2>
@@ -111,13 +111,13 @@
         </div>
 
       </div>
-
     </div>
 
-    <!-- RIGHT: FORM -->
+    <!-- RIGHT FORM -->
     <div>
 
-      <form action="https://formspree.io/f/xojpjgrg"
+      <form id="contactForm"
+            action="https://formspree.io/f/xojpjgrg"
             method="POST"
             class="bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-xl space-y-4">
 
@@ -127,19 +127,21 @@
                name="name"
                placeholder="Your Name"
                required
-               class="w-full p-3 rounded-lg bg-gray-900 border border-gray-700 text-white text-sm focus:outline-none focus:border-yellow-400">
+               class="w-full p-3 rounded-lg bg-gray-900 border border-gray-700 text-white text-sm">
 
         <input type="email"
                name="email"
                placeholder="Your Email"
                required
-               class="w-full p-3 rounded-lg bg-gray-900 border border-gray-700 text-white text-sm focus:outline-none focus:border-yellow-400">
+               class="w-full p-3 rounded-lg bg-gray-900 border border-gray-700 text-white text-sm">
 
+        <!-- FIXED: added id -->
         <textarea name="message"
+                  id="messageBox"
                   rows="5"
                   placeholder="Your Message"
                   required
-                  class="w-full p-3 rounded-lg bg-gray-900 border border-gray-700 text-white text-sm focus:outline-none focus:border-yellow-400"></textarea>
+                  class="w-full p-3 rounded-lg bg-gray-900 border border-gray-700 text-white text-sm"></textarea>
 
         <button type="submit"
                 class="w-full bg-yellow-500 text-black py-3 rounded-lg font-semibold hover:bg-yellow-400 transition active:scale-95">
@@ -154,7 +156,7 @@
 
 </section>
 
-<!-- ================= SUCCESS MESSAGE ================= -->
+<!-- ================= SUCCESS ================= -->
 <div id="successMessage"
      class="hidden fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-green-500 text-black px-4 md:px-6 py-3 rounded-full shadow-lg font-semibold text-sm md:text-base">
   ✅ Message Sent Successfully
@@ -162,7 +164,8 @@
 
 <!-- ================= SCRIPTS ================= -->
 <script>
-// hamburger toggle (FIXED)
+
+// mobile menu FIXED
 const menuBtn = document.getElementById("menuBtn");
 const mobileMenu = document.getElementById("mobileMenu");
 
@@ -173,7 +176,6 @@ function toggleMenu() {
 
 menuBtn.addEventListener("click", toggleMenu);
 
-// close when clicking outside
 document.addEventListener("click", function(e) {
   if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
     mobileMenu.classList.add("opacity-0");
@@ -181,7 +183,7 @@ document.addEventListener("click", function(e) {
   }
 });
 
-// auto-fill message
+// auto-fill from equipment page
 window.onload = function () {
   const params = new URLSearchParams(window.location.search);
   const message = params.get("message");
@@ -199,7 +201,7 @@ Sent from TAJU Equipment Page`;
   }
 };
 
-// form submit (UNCHANGED)
+// form submit
 const form = document.getElementById("contactForm");
 const successMessage = document.getElementById("successMessage");
 
@@ -221,6 +223,7 @@ form.addEventListener("submit", async function (e) {
     successMessage.classList.add("hidden");
   }, 3000);
 });
+
 </script>
 
 </body>
