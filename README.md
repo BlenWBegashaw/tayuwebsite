@@ -1,6 +1,6 @@
 # TAJU Heavy Equipment Rental Website
 
-Link: https://taju.vercel.app/
+Link: https://taju.vercel.app
 
 This is the official website for TAJU Business PLC, a heavy equipment rental service based in Addis Ababa, Ethiopia.
 
